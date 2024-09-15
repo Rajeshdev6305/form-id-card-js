@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID CARD</title>
+  </head>
+  <style>
+    body {
+      padding: 0px;
+      border: 0px;
+      box-sizing: border-box;
+    }
+    input {
+      width: 250px;
+      border-radius: 5px;
+      height: 25px;
+    }
+  </style>
+  <body>
+    <div
+      style="
+        background-color: hsl(99, 89%, 32%);
+        padding: 30px;
+        width: 260px;
+        border-radius: 15px;
+      "
+    >
+      <form action="">
+        <label for="name">NAME: </label>
+        <input type="text" name="" id="name" required /><br /><br />
+
+        <label for="age">AGE:</label>
+        <input type="number" name="" id="age" required /><br /><br />
+
+        <label for="mobile">MOBILE: </label>
+        <input type="tel" name="" id="mobile" required /><br /><br />
+
+        <label for="email">EMAIL</label>
+        <input type="email" name="" id="email" required /> <br /><br />
+
+        <label for="blood">Blood Grp : </label>
+        <input type="text" name="" id="blood" required /><br /><br />
+
+        <label for="address">ADDRESS: </label>
+        <input type="text" name="" id="address" required /><br /><br />
+
+        <input type="submit" />
+      </form>
+    </div>
+
+    <h3 id="pName"></h3>
+    <h4 id="pAge"></h4>
+    <h4 id="pNumber"></h4>
+    <h4 id="pEmail"></h4>
+    <h4 id="pBlood"></h4>
+    <h4 id="pAddress"></h4>
+
+    <script>
+      let name = document.getElementById("name");
+      let age = document.getElementById("age");
+      let mobile = document.getElementById("mobile");
+      let email = document.getElementById("email");
+      let blood = document.getElementById("blood");
+      let address = document.getElementById("address");
+
+      window.addEventListener("submit", (def) => {
+        def.preventDefault();
+        let divCon = document.createElement("div");
+        divCon.style.height = "485px";
+        divCon.style.width = "310px";
+        divCon.style.marginLeft = "350px";
+        divCon.style.marginTop = "-485px";
+        divCon.style.borderRadius = "15px";
+        divCon.style.border = "2px solid lightblue";
+        divCon.style.backgroundColor = "hsl(99, 89%, 32%)";
+        document.body.appendChild(divCon);
+
+        let divCon1 = document.createElement("img");
+        divCon1.setAttribute("src", "pic.png");
+        divCon1.style.height = "150px";
+        divCon1.style.width = "150px";
+        divCon1.style.padding = "30px 23%";
+        document.body.appendChild(divCon1);
+        divCon.appendChild(divCon1);
+
+        let pName = document.getElementById("pName");
+        pName.innerHTML = name.value;
+        pName.style.marginTop = "-20px";
+        pName.style.textAlign = "center";
+        pName.style.color = "black";
+        pName.style.textShadow = "0px 0px 10px white";
+        divCon.appendChild(pName);
+
+        let divCon2 = document.createElement("div");
+        divCon2.style.width = "300px";
+        divCon2.style.height = "200px";
+        divCon2.style.backgroundColor = "hsl(99, 89%, 32%)";
+        divCon.appendChild(divCon2);
+
+        let pAge = document.getElementById("pAge");
+        pAge.style.paddingTop = "15px";
+        pAge.style.color = "white";
+        pAge.innerHTML = "Age: " + age.value;
+        pAge.style.paddingLeft = "30px";
+
+        divCon2.appendChild(pAge);
+
+        let pNumber = document.getElementById("pNumber");
+        pNumber.innerHTML = "Mobile: " + mobile.value;
+        pNumber.style.color = "white";
+        pNumber.style.paddingLeft = "30px";
+        divCon2.appendChild(pNumber);
+
+        let pEmail = document.getElementById("pEmail");
+        pEmail.innerHTML = "Email: " + email.value;
+        pEmail.style.color = "white";
+        pEmail.style.paddingLeft = "30px";
+        divCon2.appendChild(pEmail);
+
+        let pBlood = document.getElementById("pBlood");
+        pBlood.innerHTML = "Blood Group: " + blood.value;
+        pBlood.style.color = "white";
+        pBlood.style.paddingLeft = "30px";
+        divCon2.appendChild(pBlood);
+
+        let pAddress = document.getElementById("pAddress");
+        pAddress.innerHTML = "Address: " + address.value;
+        pAddress.style.color = "white";
+        pAddress.style.paddingLeft = "30px";
+        divCon2.appendChild(pAddress);
+      });
+    </script>
+  </body>
+</html>
